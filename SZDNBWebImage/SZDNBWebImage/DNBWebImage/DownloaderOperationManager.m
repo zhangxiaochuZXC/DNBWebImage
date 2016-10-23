@@ -39,8 +39,26 @@
         self.queue = [[NSOperationQueue alloc] init];
         self.OPCache = [[NSMutableDictionary alloc] init];
         self.iamgesCache = [[NSMutableDictionary alloc] init];
+        
+        // 当第一次使用单例时,就注册内存警告的通知
+        // `object:nil` : 表示任何对象发送内存警告的通知,我都可以接收到
+        // 提示 : 当你需要注册跟应用程序相关的通知时,可以选择在init方法里面做
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cleanMemCache) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
+}
+
+// 处理内存警告 : 当接收到内存警告时,执行
+- (void)cleanMemCache
+{
+    // 清楚内存里面所有图片
+    [self.iamgesCache removeAllObjects];
+}
+
+// 单例的生命周期和APP一样长,只有APP退出了.dealloc才执行;所以,单例里面注册通知没有必要移除
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 // 单例下载的主方法 : 单例封装DownloaderOperation的下载代码
