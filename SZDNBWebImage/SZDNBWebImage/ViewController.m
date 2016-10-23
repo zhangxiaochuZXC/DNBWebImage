@@ -28,6 +28,12 @@
     
     // 2.1 想自定义操作中传入图片地址
     op.URLStr = @"http://img05.tooopen.com/images/20140604/sy_62331342149.jpg";
+    // 2.2 定义和传递代码块
+    void(^successBlock)() = ^(UIImage *image){
+        // 先检测是否可以成功的拿到图片对象
+        NSLog(@"VC %@ %@",image,[NSThread currentThread]);
+    };
+    op.successBlock = successBlock;
     
     // 3.把自定义操作添加到队列
     [self.queue addOperation:op];

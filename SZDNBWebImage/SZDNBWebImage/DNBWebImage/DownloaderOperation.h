@@ -13,5 +13,7 @@
 
 /* 接收外界传入的图片地址 */
 @property (copy, nonatomic) NSString *URLStr;
+/* 接收外界传入的代码块 */
+@property (copy, nonatomic) void(^successBlock)(UIImage *iamge);
 
 @end

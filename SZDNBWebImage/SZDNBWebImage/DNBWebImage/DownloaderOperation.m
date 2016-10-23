@@ -12,7 +12,7 @@
  图片下载
  1.需要在子线程异步下载
  2.图片下载需要图片地址
- 
+ 3.把图片对象传递到展示的地方 (Block / 代理 / 通知)
  */
 
 @implementation DownloaderOperation
@@ -30,7 +30,14 @@
     NSData *data = [NSData dataWithContentsOfURL:URL];
     UIImage *image = [UIImage imageWithData:data];
     
-    NSLog(@"%@",image);
+    // 图片下载完成之后,需要把图片回调 / 传递到展示的地方
+    if (self.successBlock != nil) {
+        // 执行完这行代码,VC里面的successBlock就会执行,并拿到image
+        // 注意 : 在哪个线程回调代码块,那么代码块就在哪个线程执行;代理 / 通知也是这样的
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.successBlock(image);
+        }];
+    }
 }
 
 @end
