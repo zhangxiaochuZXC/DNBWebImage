@@ -49,7 +49,10 @@
  */
 - (void)main
 {
-//    NSLog(@"传入 %@",self.URLStr);
+    NSLog(@"传入 %@",self.URLStr);
+    
+    // 模拟网络延迟
+    [NSThread sleepForTimeInterval:1.0];
     
     // 图片下载
     NSURL *URL = [NSURL URLWithString:self.URLStr];
@@ -60,13 +63,10 @@
     NSAssert(self.successBlock != nil, @"下载完成的回调,不能为空");
     
     // 图片下载完成之后,需要把图片回调 / 传递到展示的地方
-//    if (self.successBlock != nil) {
-        // 执行完这行代码,VC里面的successBlock就会执行,并拿到image
-        // 注意 : 在哪个线程回调代码块,那么代码块就在哪个线程执行;代理 / 通知也是这样的
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.successBlock(image);
-        }];
-//    }
+    // 执行完这行代码,VC里面的successBlock就会执行,并拿到image
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.successBlock(image);
+    }];
 }
 
 @end
