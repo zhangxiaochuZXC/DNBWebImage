@@ -11,9 +11,14 @@
 
 @interface DownloaderOperation : NSOperation
 
-/* 接收外界传入的图片地址 */
-@property (copy, nonatomic) NSString *URLStr;
-/* 接收外界传入的代码块 */
-@property (copy, nonatomic) void(^successBlock)(UIImage *iamge);
+/**
+ 类方法实例化操作,并传入图片地址和下载完成回调
+
+ @param URLStr       图片地址
+ @param successBlock 下载完成回到
+
+ @return 返回自定义操作对象
+ */
++ (instancetype)downloadWithURLStr:(NSString *)URLStr successBlock:(void(^)(UIImage *))successBlock;
 
 @end

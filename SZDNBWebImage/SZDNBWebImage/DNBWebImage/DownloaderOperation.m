@@ -15,7 +15,33 @@
  3.把图片对象传递到展示的地方 (Block / 代理 / 通知)
  */
 
+@interface DownloaderOperation ()
+
+/* 接收外界传入的图片地址 */
+@property (copy, nonatomic) NSString *URLStr;
+/* 接收外界传入的代码块 */
+@property (copy, nonatomic) void(^successBlock)(UIImage *iamge);
+
+@end
+
 @implementation DownloaderOperation
+
+/*
+ 1.自定义操作实例化的方法
+ 2.此方法先于main方法执行
+ */
++ (instancetype)downloadWithURLStr:(NSString *)URLStr successBlock:(void (^)(UIImage *))successBlock
+{
+    // 1.实例化自定义操作
+    DownloaderOperation *op = [[DownloaderOperation alloc] init];
+    
+    // 2.保存图片地址和下载完成回调,就可以在当前类全局使用;把外界传入的数据变成自己的
+    op.URLStr = URLStr;
+    op.successBlock = successBlock;
+    
+    // 3.返回自定义操作
+    return op;
+}
 
 /*
  1.重写操作执行的入口方法 : 做你想做的事,默认就在子线程异步执行的

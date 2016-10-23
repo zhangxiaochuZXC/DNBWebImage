@@ -23,6 +23,28 @@
     
     // 1.创建队列
     self.queue = [[NSOperationQueue alloc] init];
+    
+    // 图片地址
+    NSString *URLStr = @"http://img05.tooopen.com/images/20140604/sy_62331342149.jpg";
+    // 下载完成回调
+    void(^successBlock)() = ^(UIImage *image){
+        // 先检测是否可以成功的拿到图片对象
+        NSLog(@"VC %@ %@",image,[NSThread currentThread]);
+    };
+    
+    // 2.创建自定义操作
+    DownloaderOperation *op = [DownloaderOperation downloadWithURLStr:URLStr successBlock:successBlock];
+    
+    // 3.把自定义操作添加到队列
+    [self.queue addOperation:op];
+}
+
+// 对象方法自定义NSOperation
+/*
+- (void)test
+{
+    // 1.创建队列
+    self.queue = [[NSOperationQueue alloc] init];
     // 2.创建自定义操作
     DownloaderOperation *op = [[DownloaderOperation alloc] init];
     
@@ -34,11 +56,15 @@
         NSLog(@"VC %@ %@",image,[NSThread currentThread]);
     };
     op.successBlock = successBlock;
+ 
+     [op setSuccessBlock:^(UIImage *image) {
+     }];
+ 
     
     // 3.把自定义操作添加到队列
     [self.queue addOperation:op];
 }
-
+*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
