@@ -59,12 +59,20 @@
     NSData *data = [NSData dataWithContentsOfURL:URL];
     UIImage *image = [UIImage imageWithData:data];
     
+    // 判断当前的操作是否被取消,去过被取消就直接return,不在往下执行;
+    // 注意 : 可以在这个方法的多个地方判断,但是,必须能够拦截回调;并且,至少在延迟操作的后面有一个判断
+    if (self.isCancelled == YES) {
+        NSLog(@"取消 %@",self.URLStr);
+        return;
+    }
+    
     // 断言 : 保证某一个条件一定是满足的,如果不满足就崩溃,可以自定义崩溃的原因;是在Debug时有效,Release模式下无效;方便在开发阶段避免不必要的错误;Debug : 上线之前;Release : 上线之后;
     NSAssert(self.successBlock != nil, @"下载完成的回调,不能为空");
     
     // 图片下载完成之后,需要把图片回调 / 传递到展示的地方
     // 执行完这行代码,VC里面的successBlock就会执行,并拿到image
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSLog(@"完成 %@",self.URLStr);
         self.successBlock(image);
     }];
 }
