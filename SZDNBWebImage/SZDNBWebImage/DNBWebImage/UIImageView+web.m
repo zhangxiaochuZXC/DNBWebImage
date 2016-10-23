@@ -7,20 +7,33 @@
 //
 
 #import "UIImageView+web.h"
-
-@implementation UIImageView (web)
+#import <objc/runtime.h>
 
 /*
+ 1.要让分类的属性能够保存值,就需要使用运行时的`关联对象`
+ 2.使用关联对象,就避免了在分类的属性的setter和getter方法里面使用成员变量
+ */
+@implementation UIImageView (web)
+
 - (void)setLastURLStr:(NSString *)lastURLStr
 {
-    
+    /*
+     参数1 : 要关联的对象,表示让哪个对象的属性的成员变量可以存值
+     参数2 : 关联的对象的key
+     参数3 : 要关联的对象的那个属性
+     参数4 : 要关联的对象的属性的存储策略
+     */
+    objc_setAssociatedObject(self, "KEY", lastURLStr, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (NSString *)lastURLStr
 {
-    
+    /*
+     参数1 : 要关联的对象,表示让哪个对象的属性的成员变量可以存值
+     参数2 : 关联的对象的key
+     */
+    return objc_getAssociatedObject(self, "KEY");
 }
- */
 
 - (void)DNB_setImageWithURLStr:(NSString *)URLStr
 {

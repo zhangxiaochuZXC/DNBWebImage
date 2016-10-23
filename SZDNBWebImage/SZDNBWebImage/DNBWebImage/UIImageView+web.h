@@ -15,6 +15,7 @@
  上次图片地址
  不会生成带下划线的成员变量,需要自己重写setter和getter方法
  分类不能拓展成员变量,但是类拓展 / 延展里面可以
+ 属性的值都是保存在成员变量里面的
  */
 @property (copy, nonatomic) NSString *lastURLStr;
 
