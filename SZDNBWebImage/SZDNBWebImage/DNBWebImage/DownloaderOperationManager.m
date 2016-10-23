@@ -66,4 +66,14 @@
     [self.queue addOperation:op];
 }
 
+// 单例取消操作的主方法
+- (void)cancelDownloadingOperationWithLastURLStr:(NSString *)lastURLStr
+{
+    // 取消上次正在执行的操作
+    [[self.OPCache objectForKey:lastURLStr] cancel];
+    
+    // 把取消的操作从操作缓存池移除
+    [self.OPCache removeObjectForKey:lastURLStr];
+}
+
 @end
