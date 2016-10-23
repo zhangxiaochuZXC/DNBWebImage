@@ -11,6 +11,8 @@
 /*
  图片下载
  1.需要在子线程异步下载
+ 2.图片下载需要图片地址
+ 
  */
 
 @implementation DownloaderOperation
@@ -21,8 +23,14 @@
  */
 - (void)main
 {
+//    NSLog(@"传入 %@",self.URLStr);
+    
     // 图片下载
-    NSLog(@"%@",[NSThread currentThread]);
+    NSURL *URL = [NSURL URLWithString:self.URLStr];
+    NSData *data = [NSData dataWithContentsOfURL:URL];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    NSLog(@"%@",image);
 }
 
 @end

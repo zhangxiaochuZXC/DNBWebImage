@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DownloaderOperation : NSOperation
+
+/* 接收外界传入的图片地址 */
+@property (copy, nonatomic) NSString *URLStr;
 
 @end
