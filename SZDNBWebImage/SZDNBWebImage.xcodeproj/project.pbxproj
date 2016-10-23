@@ -12,6 +12,7 @@
 		7F0D00081DBC609800230B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D00061DBC609800230B67 /* Main.storyboard */; };
 		7F0D000A1DBC609800230B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D00091DBC609800230B67 /* Assets.xcassets */; };
 		7F0D000D1DBC609800230B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D000B1DBC609800230B67 /* LaunchScreen.storyboard */; };
+		7F0D00181DBC628D00230B67 /* DownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D00171DBC628D00230B67 /* DownloaderOperation.m */; };
 		7F0DFFFF1DBC609800230B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DFFFE1DBC609800230B67 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,8 @@
 		7F0D00091DBC609800230B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0D000C1DBC609800230B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F0D000E1DBC609800230B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F0D00161DBC628D00230B67 /* DownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperation.h; sourceTree = "<group>"; };
+		7F0D00171DBC628D00230B67 /* DownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperation.m; sourceTree = "<group>"; };
 		7F0DFFFA1DBC609800230B67 /* SZDNBWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZDNBWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0DFFFE1DBC609800230B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F0D00151DBC626E00230B67 /* DNBWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				7F0D00161DBC628D00230B67 /* DownloaderOperation.h */,
+				7F0D00171DBC628D00230B67 /* DownloaderOperation.m */,
+			);
+			path = DNBWebImage;
+			sourceTree = "<group>";
+		};
 		7F0DFFF11DBC609800230B67 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +70,7 @@
 		7F0DFFFC1DBC609800230B67 /* SZDNBWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				7F0D00151DBC626E00230B67 /* DNBWebImage */,
 				7F0D00001DBC609800230B67 /* AppDelegate.h */,
 				7F0D00011DBC609800230B67 /* AppDelegate.m */,
 				7F0D00031DBC609800230B67 /* ViewController.h */,
@@ -150,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0D00181DBC628D00230B67 /* DownloaderOperation.m in Sources */,
 				7F0D00051DBC609800230B67 /* ViewController.m in Sources */,
 				7F0D00021DBC609800230B67 /* AppDelegate.m in Sources */,
 				7F0DFFFF1DBC609800230B67 /* main.m in Sources */,
@@ -298,6 +312,7 @@
 				7F0D00131DBC609800230B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F0DFFF51DBC609800230B67 /* Build configuration list for PBXProject "SZDNBWebImage" */ = {
 			isa = XCConfigurationList;
