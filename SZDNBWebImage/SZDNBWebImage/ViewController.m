@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "YYModel.h"
 #import "APPModel.h"
+#import "DownloaderOperationManager.h"
 
 @interface ViewController ()
 
@@ -61,19 +62,10 @@
     // 记录本次图片地址,当再次点击时,它自然而然就是上次的地址了.(前任)
     self.lastURLStr = app.icon;
     
-    // 3.创建自定义操作
-    DownloaderOperation *op = [DownloaderOperation downloadWithURLStr:app.icon successBlock:^(UIImage *image){
-        // 刷新UI
+    // 3.单例接管下载 : 取消操作暂时失效
+    [[DownloaderOperationManager sharedManager] downloadWithURLStr:app.icon successBlock:^(UIImage *image) {
         self.iconImgView.image = image;
-        // 图片下载完成之后,移除操作
-        [self.OPCache removeObjectForKey:app.icon];
     }];
-    
-    // 4.把创建的操作添加到操作缓存池
-    [self.OPCache setObject:op forKey:app.icon];
-    
-    // 5.把自定义操作添加到队列
-    [self.queue addOperation:op];
 }
 
 #pragma mark-获取json数据的主方法

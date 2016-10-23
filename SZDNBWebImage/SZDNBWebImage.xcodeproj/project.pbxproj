@@ -22,6 +22,7 @@
 		7F0D00331DBC96C200230B67 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D002F1DBC96C200230B67 /* NSObject+YYModel.m */; };
 		7F0D00341DBC96C200230B67 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D00311DBC96C200230B67 /* YYClassInfo.m */; };
 		7F0D00371DBC96C900230B67 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D00361DBC96C900230B67 /* APPModel.m */; };
+		7F0D003C1DBCA56F00230B67 /* DownloaderOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */; };
 		7F0DFFFF1DBC609800230B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DFFFE1DBC609800230B67 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		7F0D00321DBC96C200230B67 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		7F0D00351DBC96C900230B67 /* APPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPModel.h; sourceTree = "<group>"; };
 		7F0D00361DBC96C900230B67 /* APPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPModel.m; sourceTree = "<group>"; };
+		7F0D003A1DBCA56F00230B67 /* DownloaderOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperationManager.h; sourceTree = "<group>"; };
+		7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperationManager.m; sourceTree = "<group>"; };
 		7F0DFFFA1DBC609800230B67 /* SZDNBWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZDNBWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0DFFFE1DBC609800230B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +79,8 @@
 			children = (
 				7F0D00161DBC628D00230B67 /* DownloaderOperation.h */,
 				7F0D00171DBC628D00230B67 /* DownloaderOperation.m */,
+				7F0D003A1DBCA56F00230B67 /* DownloaderOperationManager.h */,
+				7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */,
 			);
 			path = DNBWebImage;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				7F0D002C1DBC96B700230B67 /* AFURLSessionManager.m in Sources */,
 				7F0D00021DBC609800230B67 /* AppDelegate.m in Sources */,
 				7F0D00281DBC96B700230B67 /* AFNetworkReachabilityManager.m in Sources */,
+				7F0D003C1DBCA56F00230B67 /* DownloaderOperationManager.m in Sources */,
 				7F0D00331DBC96C200230B67 /* NSObject+YYModel.m in Sources */,
 				7F0DFFFF1DBC609800230B67 /* main.m in Sources */,
 				7F0D002A1DBC96B700230B67 /* AFURLRequestSerialization.m in Sources */,

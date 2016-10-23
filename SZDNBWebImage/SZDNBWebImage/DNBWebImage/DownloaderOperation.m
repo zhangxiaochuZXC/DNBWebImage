@@ -69,8 +69,8 @@
     // 断言 : 保证某一个条件一定是满足的,如果不满足就崩溃,可以自定义崩溃的原因;是在Debug时有效,Release模式下无效;方便在开发阶段避免不必要的错误;Debug : 上线之前;Release : 上线之后;
     NSAssert(self.successBlock != nil, @"下载完成的回调,不能为空");
     
-    // 图片下载完成之后,需要把图片回调 / 传递到展示的地方
-    // 执行完这行代码,VC里面的successBlock就会执行,并拿到image
+    // 图片下载完成之后,需要把图片回调 / 传递到单例
+    // 执行完这行代码,单例里面的managerBlock就会执行,并拿到image
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         NSLog(@"完成 %@",self.URLStr);
         self.successBlock(image);
