@@ -11,6 +11,7 @@
 #import "YYModel.h"
 #import "APPModel.h"
 #import "DownloaderOperationManager.h"
+#import "UIImageView+web.h"
 
 @interface ViewController ()
 
@@ -39,21 +40,8 @@
     // 2.随机获取模型对象
     APPModel *app = self.appList[random];
     
-    // 判断当前图片地址和上次图片地址是否一样,如果不一样就取消上次正在执行的下载操作
-    // cancel : 仅仅是改变了操作的状态而已,并没有真真的取消这个操作
-    if (![app.icon isEqualToString:self.lastURLStr] && self.lastURLStr != nil) {
-        
-        // 单例接管取消操作
-        [[DownloaderOperationManager sharedManager] cancelDownloadingOperationWithLastURLStr:self.lastURLStr];
-    }
-    
-    // 记录本次图片地址,当再次点击时,它自然而然就是上次的地址了.(前任)
-    self.lastURLStr = app.icon;
-    
-    // 3.单例接管下载
-    [[DownloaderOperationManager sharedManager] downloadWithURLStr:app.icon successBlock:^(UIImage *image) {
-        self.iconImgView.image = image;
-    }];
+    // 3.DNBWebImage框架接管下载
+    [self.iconImgView DNB_setImageWithURLStr:app.icon];
 }
 
 #pragma mark-获取json数据的主方法

@@ -24,6 +24,7 @@
 		7F0D00371DBC96C900230B67 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D00361DBC96C900230B67 /* APPModel.m */; };
 		7F0D003C1DBCA56F00230B67 /* DownloaderOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */; };
 		7F0D003F1DBCB36600230B67 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D003E1DBCB36600230B67 /* NSString+path.m */; };
+		7F0D00421DBCB67A00230B67 /* UIImageView+web.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D00411DBCB67A00230B67 /* UIImageView+web.m */; };
 		7F0DFFFF1DBC609800230B67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0DFFFE1DBC609800230B67 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperationManager.m; sourceTree = "<group>"; };
 		7F0D003D1DBCB36600230B67 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
 		7F0D003E1DBCB36600230B67 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
+		7F0D00401DBCB67A00230B67 /* UIImageView+web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+web.h"; sourceTree = "<group>"; };
+		7F0D00411DBCB67A00230B67 /* UIImageView+web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+web.m"; sourceTree = "<group>"; };
 		7F0DFFFA1DBC609800230B67 /* SZDNBWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZDNBWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0DFFFE1DBC609800230B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +89,8 @@
 				7F0D00171DBC628D00230B67 /* DownloaderOperation.m */,
 				7F0D003A1DBCA56F00230B67 /* DownloaderOperationManager.h */,
 				7F0D003B1DBCA56F00230B67 /* DownloaderOperationManager.m */,
+				7F0D00401DBCB67A00230B67 /* UIImageView+web.h */,
+				7F0D00411DBCB67A00230B67 /* UIImageView+web.m */,
 			);
 			path = DNBWebImage;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0D00371DBC96C900230B67 /* APPModel.m in Sources */,
+				7F0D00421DBCB67A00230B67 /* UIImageView+web.m in Sources */,
 				7F0D00291DBC96B700230B67 /* AFSecurityPolicy.m in Sources */,
 				7F0D002B1DBC96B700230B67 /* AFURLResponseSerialization.m in Sources */,
 				7F0D00181DBC628D00230B67 /* DownloaderOperation.m in Sources */,
